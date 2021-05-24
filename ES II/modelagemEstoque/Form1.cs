@@ -52,6 +52,7 @@ namespace modelagemEstoque
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //altera o produto selecionado
             listview_prod.SelectedItems[0].SubItems[0].Text =(txt_ID_produto.Text);
             listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text) ;
             listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);
