@@ -31,10 +31,15 @@ namespace modelagemEstoque
             item.SubItems.Add(txt_qtde_produto.Text);
             item.SubItems.Add(data_compra_prod.Value.ToString("D"));
             item.SubItems.Add(data_vencimento_prod.Value.ToString("D"));
+            if (checkBox1.Checked)
+                item.SubItems.Add("Sim");
+            else
+                item.SubItems.Add("Não");
             listview_prod.Items.Add(item);
             txt_ID_produto.Clear();
             txt_nome_prod.Clear();
             txt_qtde_produto.Clear();
+            checkBox1.Checked = false;
             
 
 
@@ -47,7 +52,15 @@ namespace modelagemEstoque
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            listview_prod.SelectedItems[0].SubItems[0].Text =(txt_ID_produto.Text);
+            listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text) ;
+            listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);
+            listview_prod.SelectedItems[0].SubItems[3].Text = (data_compra_prod.Value.ToString("D"));
+            listview_prod.SelectedItems[0].SubItems[4].Text = (data_vencimento_prod.Value.ToString("D"));
+            if (checkBox1.Checked)
+                listview_prod.SelectedItems[0].SubItems[5].Text = ("Sim");
+            else
+                listview_prod.SelectedItems[0].SubItems[5].Text = ("Não");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,6 +79,16 @@ namespace modelagemEstoque
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            listview_prod.Items.RemoveAt(listview_prod.SelectedIndices[0]);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

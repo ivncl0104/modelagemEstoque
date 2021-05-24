@@ -32,7 +32,6 @@ namespace modelagemEstoque
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.btn_adicionar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,6 +52,8 @@ namespace modelagemEstoque
             this.list_data_vencimento_prod = new System.Windows.Forms.ColumnHeader();
             this.data_compra_prod = new System.Windows.Forms.DateTimePicker();
             this.data_vencimento_prod = new System.Windows.Forms.DateTimePicker();
+            this.list_freezer = new System.Windows.Forms.ColumnHeader();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,17 +78,6 @@ namespace modelagemEstoque
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(387, 430);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(82, 22);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "FILTRAR";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // btn_adicionar
             // 
             this.btn_adicionar.Location = new System.Drawing.Point(56, 425);
@@ -108,6 +98,7 @@ namespace modelagemEstoque
             this.button4.TabIndex = 5;
             this.button4.Text = "EXCLUIR";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
             // 
@@ -200,13 +191,15 @@ namespace modelagemEstoque
             this.list_nome_prod,
             this.list_qtde_prod,
             this.list_data_compra_prod,
-            this.list_data_vencimento_prod});
+            this.list_data_vencimento_prod,
+            this.list_freezer});
             this.listview_prod.FullRowSelect = true;
             this.listview_prod.HideSelection = false;
+            this.listview_prod.HoverSelection = true;
+            this.listview_prod.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.listview_prod.Location = new System.Drawing.Point(56, 135);
-            this.listview_prod.MultiSelect = false;
             this.listview_prod.Name = "listview_prod";
-            this.listview_prod.Size = new System.Drawing.Size(765, 256);
+            this.listview_prod.Size = new System.Drawing.Size(822, 256);
             this.listview_prod.TabIndex = 22;
             this.listview_prod.UseCompatibleStateImageBehavior = false;
             this.listview_prod.View = System.Windows.Forms.View.Details;
@@ -250,12 +243,28 @@ namespace modelagemEstoque
             this.data_vencimento_prod.Size = new System.Drawing.Size(200, 23);
             this.data_vencimento_prod.TabIndex = 24;
             // 
+            // list_freezer
+            // 
+            this.list_freezer.Text = "Freezer";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(841, 400);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 19);
+            this.checkBox1.TabIndex = 25;
+            this.checkBox1.Text = "Freezer";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1391, 629);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.data_vencimento_prod);
             this.Controls.Add(this.data_compra_prod);
             this.Controls.Add(this.listview_prod);
@@ -271,7 +280,6 @@ namespace modelagemEstoque
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_adicionar);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -288,7 +296,6 @@ namespace modelagemEstoque
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_adicionar;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label1;
@@ -309,6 +316,8 @@ namespace modelagemEstoque
         private System.Windows.Forms.ColumnHeader list_data_vencimento_prod;
         private System.Windows.Forms.DateTimePicker data_compra_prod;
         private System.Windows.Forms.DateTimePicker data_vencimento_prod;
+        private System.Windows.Forms.ColumnHeader list_freezer;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

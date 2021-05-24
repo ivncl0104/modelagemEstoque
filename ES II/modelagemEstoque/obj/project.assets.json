@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivane\\Desktop\\Nova pasta (2)\\ES II\\modelagemEstoque\\modelagemEstoque.csproj",
+      "projectUniqueName": "C:\\Users\\ivane\\Source\\Repos\\ivncl0104\\modelagemEstoque\\ES II\\modelagemEstoque\\modelagemEstoque.csproj",
       "projectName": "modelagemEstoque",
-      "projectPath": "C:\\Users\\ivane\\Desktop\\Nova pasta (2)\\ES II\\modelagemEstoque\\modelagemEstoque.csproj",
+      "projectPath": "C:\\Users\\ivane\\Source\\Repos\\ivncl0104\\modelagemEstoque\\ES II\\modelagemEstoque\\modelagemEstoque.csproj",
       "packagesPath": "C:\\Users\\ivane\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivane\\Desktop\\Nova pasta (2)\\ES II\\modelagemEstoque\\obj\\",
+      "outputPath": "C:\\Users\\ivane\\Source\\Repos\\ivncl0104\\modelagemEstoque\\ES II\\modelagemEstoque\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ivane\\AppData\\Roaming\\NuGet\\NuGet.Config",
