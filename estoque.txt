@@ -1,0 +1,51 @@
+
+- QUAL É O NEGÓCIO?
+ * Um sistema gerenciador de estoque;
+// O estabelecimento atua no ramo de mercado de bairro, contém alguns tipos de congelados, produtos de higiene, e produtos comuns no geral. Para que o proprietário possa cuidar do setor financeiro com mais precisão e cautela, ele decide apostar em nosso serviço de solução para gerenciamento de estoque, para que assim possa administrar e gerenciar o estabelecimento sem complicações. Assim, seu funcionário pode levantar os dados com apenas alguns cliques, sem esforço e com mais segurança.
+
+- QUAIS SÃO OS PROBLEMAS/OPORTUNIDADES?
+// Explicar o caminho mais detalhadamente
+// Por que não usar um existente? Por que usar a nossa aplicação? Para que desenvolver um sistema novo?
+Antes o controle de estoque era feito com manejo das notas, e totalmente manual. Podendo facilmente haver falhas, seja na contagem, ou até mesmo na desordem por ser uma carga grande de produtos. Já que todo processo era manual e propenso a falhas, não viam a necessidade de comprar uma máquina (além dos caixas). 
+Mas para implantação do sistema não será necessário um orçamento grande já que o sistema é leve e compacto. Apenas sendo necessária a transcrição dos produtos para o sistema de gerenciamento.
+
+
+- QUAIS SÃO OS VOCÁBULOS DE NEGÓCIO?
+	- ONOFF: ATIVO / INATIVO
+	- EMIN : ESTOQUE MINIMO
+	- EMAX : ESTOQUE MAXIMO
+
+- QUAIS SÃO AS REGRAS DE NEGÓCIO?
+// Se vc olhar o négocio de estoque hoje, quais as regras que ele segue? Quais são as regras que eles devem seguir hoje?
+RN0001 - A cada 15 dias, é feito uma reunião entre os funcionários e proprietário para execução da contagem/controle;
+RN0002 - Levantamento de todos os documentos de compra (NF e afins), anotações e respectivas necessidades;
+RN0003 - Verificar dados de cada documento (data de aquisição, preço, produto, quantidade, etc);
+RN0004 - Realizar operações (contabilidades no geral e contagem);
+RN0005 - Verificar produtos refrigerados;
+RN0006 - Concluir todo levantamento e encerrar operação;
+
+/* RN0001 - Os produtos serão devidamente cadastrados, com seus respectivos dados corretos;
+RN0002 - O produto poderá ser REFRIGERADO ou COMUM;
+RN0003 – Após o cadastro dos produtos, é mostrada a lista de produtos com suas respectivas informações. Podendo ser alterado, excluido ou desativado. */
+
+- QUEM SÃO OS STAKEHOLDERS?
+  - Proprietário
+  - Funcionário
+  
+- REQUISITOS:
+  - Dados do produto:
+	- id_Produto;
+	- nome_Produto;
+	- quantidade_Produto;
+	- data_aquisicao;
+	- vencimento;
+	- codigodebarras;
+
+  - Validação:
+	- freezer (true // false) // Produtos refrigerados
+	- onoff (true // false) // Produtos ativos/inativos
+ 
+R0001 – deve ser informado as informações solicitadas do produto
+R0002 - determinação se é produto normal ou refrigerado
+R0003 – após implantação, poderá adicionar mais produtos, alterar, desativar ou exclui-los;
+
