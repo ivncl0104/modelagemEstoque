@@ -45,12 +45,14 @@ namespace modelagemEstoque
             this.list_qtde_prod = new System.Windows.Forms.ColumnHeader();
             this.list_data_compra_prod = new System.Windows.Forms.ColumnHeader();
             this.list_data_vencimento_prod = new System.Windows.Forms.ColumnHeader();
+            this.list_codigodebarras = new System.Windows.Forms.ColumnHeader();
             this.data_compra_prod = new System.Windows.Forms.DateTimePicker();
             this.data_vencimento_prod = new System.Windows.Forms.DateTimePicker();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.list_codigodebarras = new System.Windows.Forms.ColumnHeader();
-            this.label2 = new System.Windows.Forms.Label();
             this.btn_desativar = new System.Windows.Forms.Button();
+            this.freezer = new System.Windows.Forms.ColumnHeader();
+            this.onoff = new System.Windows.Forms.ColumnHeader();
+            this.search_id = new System.Windows.Forms.TextBox();
+            this.search_idbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -66,7 +68,7 @@ namespace modelagemEstoque
             // 
             this.btn_alterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_alterar.BackgroundImage")));
             this.btn_alterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_alterar.Location = new System.Drawing.Point(1006, 171);
+            this.btn_alterar.Location = new System.Drawing.Point(1265, 76);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(34, 41);
             this.btn_alterar.TabIndex = 2;
@@ -76,7 +78,7 @@ namespace modelagemEstoque
             // btn_filtrar
             // 
             this.btn_filtrar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_filtrar.Location = new System.Drawing.Point(890, 364);
+            this.btn_filtrar.Location = new System.Drawing.Point(620, 596);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(110, 29);
             this.btn_filtrar.TabIndex = 3;
@@ -89,7 +91,7 @@ namespace modelagemEstoque
             this.btn_adicionar.AutoSize = true;
             this.btn_adicionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_adicionar.BackgroundImage")));
             this.btn_adicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_adicionar.Location = new System.Drawing.Point(1006, 124);
+            this.btn_adicionar.Location = new System.Drawing.Point(1185, 76);
             this.btn_adicionar.Name = "btn_adicionar";
             this.btn_adicionar.Size = new System.Drawing.Size(34, 41);
             this.btn_adicionar.TabIndex = 4;
@@ -100,7 +102,7 @@ namespace modelagemEstoque
             // 
             this.btn_excluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir.BackgroundImage")));
             this.btn_excluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_excluir.Location = new System.Drawing.Point(1006, 218);
+            this.btn_excluir.Location = new System.Drawing.Point(1305, 75);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(34, 41);
             this.btn_excluir.TabIndex = 5;
@@ -110,7 +112,7 @@ namespace modelagemEstoque
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(192, 9);
+            this.label1.Location = new System.Drawing.Point(308, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(692, 54);
             this.label1.TabIndex = 6;
@@ -118,7 +120,7 @@ namespace modelagemEstoque
             // 
             // txt_ID_produto
             // 
-            this.txt_ID_produto.Location = new System.Drawing.Point(64, 366);
+            this.txt_ID_produto.Location = new System.Drawing.Point(64, 599);
             this.txt_ID_produto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_ID_produto.Name = "txt_ID_produto";
             this.txt_ID_produto.Size = new System.Drawing.Size(57, 27);
@@ -126,7 +128,7 @@ namespace modelagemEstoque
             // 
             // txt_nome_prod
             // 
-            this.txt_nome_prod.Location = new System.Drawing.Point(141, 366);
+            this.txt_nome_prod.Location = new System.Drawing.Point(127, 599);
             this.txt_nome_prod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_nome_prod.Name = "txt_nome_prod";
             this.txt_nome_prod.Size = new System.Drawing.Size(149, 27);
@@ -134,7 +136,7 @@ namespace modelagemEstoque
             // 
             // txt_qtde_produto
             // 
-            this.txt_qtde_produto.Location = new System.Drawing.Point(308, 366);
+            this.txt_qtde_produto.Location = new System.Drawing.Point(282, 599);
             this.txt_qtde_produto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_qtde_produto.Name = "txt_qtde_produto";
             this.txt_qtde_produto.Size = new System.Drawing.Size(98, 27);
@@ -148,14 +150,16 @@ namespace modelagemEstoque
             this.list_qtde_prod,
             this.list_data_compra_prod,
             this.list_data_vencimento_prod,
-            this.list_codigodebarras});
+            this.list_codigodebarras,
+            this.freezer,
+            this.onoff});
             this.listview_prod.FullRowSelect = true;
             this.listview_prod.HideSelection = false;
             this.listview_prod.Location = new System.Drawing.Point(64, 124);
             this.listview_prod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listview_prod.MultiSelect = false;
             this.listview_prod.Name = "listview_prod";
-            this.listview_prod.Size = new System.Drawing.Size(936, 234);
+            this.listview_prod.Size = new System.Drawing.Size(1275, 337);
             this.listview_prod.TabIndex = 22;
             this.listview_prod.UseCompatibleStateImageBehavior = false;
             this.listview_prod.View = System.Windows.Forms.View.Details;
@@ -169,7 +173,7 @@ namespace modelagemEstoque
             // 
             this.list_nome_prod.Text = "NOME DO PRODUTO";
             this.list_nome_prod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.list_nome_prod.Width = 180;
+            this.list_nome_prod.Width = 250;
             // 
             // list_qtde_prod
             // 
@@ -189,9 +193,16 @@ namespace modelagemEstoque
             this.list_data_vencimento_prod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.list_data_vencimento_prod.Width = 200;
             // 
+            // list_codigodebarras
+            // 
+            this.list_codigodebarras.Tag = "";
+            this.list_codigodebarras.Text = "CÓDIGO DE BARRAS";
+            this.list_codigodebarras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.list_codigodebarras.Width = 200;
+            // 
             // data_compra_prod
             // 
-            this.data_compra_prod.Location = new System.Drawing.Point(422, 366);
+            this.data_compra_prod.Location = new System.Drawing.Point(386, 599);
             this.data_compra_prod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.data_compra_prod.Name = "data_compra_prod";
             this.data_compra_prod.Size = new System.Drawing.Size(228, 27);
@@ -199,46 +210,49 @@ namespace modelagemEstoque
             // 
             // data_vencimento_prod
             // 
-            this.data_vencimento_prod.Location = new System.Drawing.Point(656, 366);
+            this.data_vencimento_prod.Location = new System.Drawing.Point(848, 790);
             this.data_vencimento_prod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.data_vencimento_prod.Name = "data_vencimento_prod";
             this.data_vencimento_prod.Size = new System.Drawing.Size(228, 27);
             this.data_vencimento_prod.TabIndex = 24;
             // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(64, 448);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(936, 250);
-            this.listView1.TabIndex = 25;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // list_codigodebarras
-            // 
-            this.list_codigodebarras.Tag = "";
-            this.list_codigodebarras.Text = "CÓDIGO DE BARRAS";
-            this.list_codigodebarras.Width = 150;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(64, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 41);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "PRODUTO COMUM";
-            // 
             // btn_desativar
             // 
             this.btn_desativar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_desativar.BackgroundImage")));
             this.btn_desativar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_desativar.Location = new System.Drawing.Point(1006, 265);
+            this.btn_desativar.Location = new System.Drawing.Point(1225, 76);
             this.btn_desativar.Name = "btn_desativar";
             this.btn_desativar.Size = new System.Drawing.Size(34, 40);
             this.btn_desativar.TabIndex = 27;
             this.btn_desativar.UseVisualStyleBackColor = true;
+            // 
+            // freezer
+            // 
+            this.freezer.Text = "FREEZER";
+            this.freezer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.freezer.Width = 140;
+            // 
+            // onoff
+            // 
+            this.onoff.Text = "ON / OFF";
+            this.onoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.onoff.Width = 100;
+            // 
+            // search_id
+            // 
+            this.search_id.Location = new System.Drawing.Point(64, 82);
+            this.search_id.Name = "search_id";
+            this.search_id.Size = new System.Drawing.Size(117, 27);
+            this.search_id.TabIndex = 28;
+            // 
+            // search_idbtn
+            // 
+            this.search_idbtn.Location = new System.Drawing.Point(205, 82);
+            this.search_idbtn.Name = "search_idbtn";
+            this.search_idbtn.Size = new System.Drawing.Size(94, 29);
+            this.search_idbtn.TabIndex = 29;
+            this.search_idbtn.Text = "button1";
+            this.search_idbtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -246,9 +260,9 @@ namespace modelagemEstoque
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1652, 885);
+            this.Controls.Add(this.search_idbtn);
+            this.Controls.Add(this.search_id);
             this.Controls.Add(this.btn_desativar);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.data_vencimento_prod);
             this.Controls.Add(this.data_compra_prod);
             this.Controls.Add(this.listview_prod);
@@ -288,10 +302,12 @@ namespace modelagemEstoque
         private System.Windows.Forms.ColumnHeader list_data_vencimento_prod;
         private System.Windows.Forms.DateTimePicker data_compra_prod;
         private System.Windows.Forms.DateTimePicker data_vencimento_prod;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader list_codigodebarras;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_desativar;
+        private System.Windows.Forms.ColumnHeader freezer;
+        private System.Windows.Forms.ColumnHeader onoff;
+        private System.Windows.Forms.TextBox search_id;
+        private System.Windows.Forms.Button search_idbtn;
     }
 }
 
