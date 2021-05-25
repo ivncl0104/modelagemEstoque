@@ -83,5 +83,15 @@ namespace modelagemEstoque
         {
 
         }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            listview_prod.Items.RemoveAt(listview_prod.SelectedIndices[0]);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
