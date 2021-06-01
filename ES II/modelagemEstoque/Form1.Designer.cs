@@ -32,7 +32,6 @@ namespace modelagemEstoque
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_alterar = new System.Windows.Forms.Button();
-            this.btn_filtrar = new System.Windows.Forms.Button();
             this.btn_adicionar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,9 +44,7 @@ namespace modelagemEstoque
             this.list_qtde_prod = new System.Windows.Forms.ColumnHeader();
             this.list_data_compra_prod = new System.Windows.Forms.ColumnHeader();
             this.list_data_vencimento_prod = new System.Windows.Forms.ColumnHeader();
-            this.list_codigodebarras = new System.Windows.Forms.ColumnHeader();
             this.freezer = new System.Windows.Forms.ColumnHeader();
-            this.onoff = new System.Windows.Forms.ColumnHeader();
             this.data_compra_prod = new System.Windows.Forms.DateTimePicker();
             this.data_vencimento_prod = new System.Windows.Forms.DateTimePicker();
             this.btn_desativar = new System.Windows.Forms.Button();
@@ -75,7 +72,7 @@ namespace modelagemEstoque
             // 
             this.btn_alterar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_alterar.BackgroundImage")));
             this.btn_alterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_alterar.Location = new System.Drawing.Point(1107, 57);
+            this.btn_alterar.Location = new System.Drawing.Point(901, 445);
             this.btn_alterar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(30, 31);
@@ -83,24 +80,12 @@ namespace modelagemEstoque
             this.btn_alterar.UseVisualStyleBackColor = true;
             this.btn_alterar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_filtrar.Location = new System.Drawing.Point(884, 450);
-            this.btn_filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(96, 22);
-            this.btn_filtrar.TabIndex = 3;
-            this.btn_filtrar.Text = "FILTRAR";
-            this.btn_filtrar.UseVisualStyleBackColor = true;
-            this.btn_filtrar.Click += new System.EventHandler(this.button2_Click);
-            // 
             // btn_adicionar
             // 
             this.btn_adicionar.AutoSize = true;
             this.btn_adicionar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_adicionar.BackgroundImage")));
             this.btn_adicionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_adicionar.Location = new System.Drawing.Point(1037, 57);
+            this.btn_adicionar.Location = new System.Drawing.Point(829, 446);
             this.btn_adicionar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_adicionar.Name = "btn_adicionar";
             this.btn_adicionar.Size = new System.Drawing.Size(30, 31);
@@ -112,7 +97,7 @@ namespace modelagemEstoque
             // 
             this.btn_excluir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_excluir.BackgroundImage")));
             this.btn_excluir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_excluir.Location = new System.Drawing.Point(1142, 56);
+            this.btn_excluir.Location = new System.Drawing.Point(865, 444);
             this.btn_excluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(30, 31);
@@ -123,32 +108,34 @@ namespace modelagemEstoque
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(270, 7);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 29.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(495, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(556, 44);
+            this.label1.Size = new System.Drawing.Size(215, 43);
             this.label1.TabIndex = 6;
-            this.label1.Text = "GERENCIADOR DE ESTOQUE";
+            this.label1.Text = "Amanita 🍄 ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_ID_produto
             // 
             this.txt_ID_produto.Location = new System.Drawing.Point(56, 449);
             this.txt_ID_produto.Name = "txt_ID_produto";
-            this.txt_ID_produto.Size = new System.Drawing.Size(50, 23);
+            this.txt_ID_produto.Size = new System.Drawing.Size(50, 21);
             this.txt_ID_produto.TabIndex = 16;
             // 
             // txt_nome_prod
             // 
             this.txt_nome_prod.Location = new System.Drawing.Point(111, 449);
             this.txt_nome_prod.Name = "txt_nome_prod";
-            this.txt_nome_prod.Size = new System.Drawing.Size(131, 23);
+            this.txt_nome_prod.Size = new System.Drawing.Size(131, 21);
             this.txt_nome_prod.TabIndex = 17;
             // 
             // txt_qtde_produto
             // 
             this.txt_qtde_produto.Location = new System.Drawing.Point(247, 449);
             this.txt_qtde_produto.Name = "txt_qtde_produto";
-            this.txt_qtde_produto.Size = new System.Drawing.Size(86, 23);
+            this.txt_qtde_produto.Size = new System.Drawing.Size(86, 21);
             this.txt_qtde_produto.TabIndex = 18;
             // 
             // listview_prod
@@ -159,9 +146,7 @@ namespace modelagemEstoque
             this.list_qtde_prod,
             this.list_data_compra_prod,
             this.list_data_vencimento_prod,
-            this.freezer,
-            this.list_codigodebarras,
-            this.onoff});
+            this.freezer});
             this.listview_prod.FullRowSelect = true;
             this.listview_prod.HideSelection = false;
             this.listview_prod.Location = new System.Drawing.Point(56, 93);
@@ -176,12 +161,13 @@ namespace modelagemEstoque
             // list_id_prod
             // 
             this.list_id_prod.Text = "ID";
+            this.list_id_prod.Width = 80;
             // 
             // list_nome_prod
             // 
             this.list_nome_prod.Text = "NOME DO PRODUTO";
             this.list_nome_prod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.list_nome_prod.Width = 250;
+            this.list_nome_prod.Width = 300;
             // 
             // list_qtde_prod
             // 
@@ -193,66 +179,44 @@ namespace modelagemEstoque
             // 
             this.list_data_compra_prod.Text = "DATA DE AQUISIÇÃO";
             this.list_data_compra_prod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.list_data_compra_prod.Width = 200;
+            this.list_data_compra_prod.Width = 250;
             // 
             // list_data_vencimento_prod
             // 
             this.list_data_vencimento_prod.Text = "VENCIMENTO";
             this.list_data_vencimento_prod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.list_data_vencimento_prod.Width = 200;
-            // 
-            // list_codigodebarras
-            // 
-            this.list_codigodebarras.DisplayIndex = 5;
-            this.list_codigodebarras.Tag = "";
-            this.list_codigodebarras.Text = "CÓDIGO DE BARRAS";
-            this.list_codigodebarras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.list_codigodebarras.Width = 200;
+            this.list_data_vencimento_prod.Width = 250;
             // 
             // freezer
             // 
-            this.freezer.DisplayIndex = 6;
             this.freezer.Text = "FREEZER";
             this.freezer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.freezer.Width = 140;
-            // 
-            // onoff
-            // 
-            this.onoff.Text = "ON / OFF";
-            this.onoff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.onoff.Width = 100;
+            this.freezer.Width = 200;
             // 
             // data_compra_prod
             // 
             this.data_compra_prod.Location = new System.Drawing.Point(338, 449);
             this.data_compra_prod.Name = "data_compra_prod";
-            this.data_compra_prod.Size = new System.Drawing.Size(200, 23);
+            this.data_compra_prod.Size = new System.Drawing.Size(200, 21);
             this.data_compra_prod.TabIndex = 23;
             // 
             // data_vencimento_prod
             // 
             this.data_vencimento_prod.Location = new System.Drawing.Point(544, 450);
             this.data_vencimento_prod.Name = "data_vencimento_prod";
-            this.data_vencimento_prod.Size = new System.Drawing.Size(200, 23);
+            this.data_vencimento_prod.Size = new System.Drawing.Size(200, 21);
             this.data_vencimento_prod.TabIndex = 24;
             // 
             // btn_desativar
             // 
-            this.btn_desativar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_desativar.BackgroundImage")));
-            this.btn_desativar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_desativar.Location = new System.Drawing.Point(1072, 57);
-            this.btn_desativar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_desativar.Name = "btn_desativar";
-            this.btn_desativar.Size = new System.Drawing.Size(30, 30);
-            this.btn_desativar.TabIndex = 27;
-            this.btn_desativar.UseVisualStyleBackColor = true;
+        
             // 
             // search_id
             // 
             this.search_id.Location = new System.Drawing.Point(56, 62);
             this.search_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.search_id.Name = "search_id";
-            this.search_id.Size = new System.Drawing.Size(103, 23);
+            this.search_id.Size = new System.Drawing.Size(103, 21);
             this.search_id.TabIndex = 28;
             // 
             // search_idbtn
@@ -271,7 +235,7 @@ namespace modelagemEstoque
             this.checkBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.checkBox1.Location = new System.Drawing.Point(761, 452);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 19);
+            this.checkBox1.Size = new System.Drawing.Size(62, 19);
             this.checkBox1.TabIndex = 30;
             this.checkBox1.Text = "Freezer";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -281,7 +245,7 @@ namespace modelagemEstoque
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(57, 431);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 15);
+            this.label2.Size = new System.Drawing.Size(20, 15);
             this.label2.TabIndex = 31;
             this.label2.Text = "ID";
             // 
@@ -290,7 +254,7 @@ namespace modelagemEstoque
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(111, 431);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 15);
+            this.label3.Size = new System.Drawing.Size(36, 15);
             this.label3.TabIndex = 32;
             this.label3.Text = "Nome";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -300,7 +264,7 @@ namespace modelagemEstoque
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(248, 431);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 15);
+            this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 33;
             this.label4.Text = "Quantidade";
             // 
@@ -309,7 +273,7 @@ namespace modelagemEstoque
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(339, 431);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 15);
+            this.label5.Size = new System.Drawing.Size(94, 15);
             this.label5.TabIndex = 34;
             this.label5.Text = "Data de Aquisição";
             // 
@@ -318,7 +282,7 @@ namespace modelagemEstoque
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(544, 432);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 15);
+            this.label6.Size = new System.Drawing.Size(87, 15);
             this.label6.TabIndex = 35;
             this.label6.Text = "Data de Validade";
             // 
@@ -346,12 +310,12 @@ namespace modelagemEstoque
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_adicionar);
-            this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.listBox1);
+            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Data de Validade";
+            this.Text = "Amanita 🍄";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -362,7 +326,6 @@ namespace modelagemEstoque
 
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btn_alterar;
-        private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.Button btn_adicionar;
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Label label1;
@@ -377,10 +340,8 @@ namespace modelagemEstoque
         private System.Windows.Forms.ColumnHeader list_data_vencimento_prod;
         private System.Windows.Forms.DateTimePicker data_compra_prod;
         private System.Windows.Forms.DateTimePicker data_vencimento_prod;
-        private System.Windows.Forms.ColumnHeader list_codigodebarras;
         private System.Windows.Forms.Button btn_desativar;
         private System.Windows.Forms.ColumnHeader freezer;
-        private System.Windows.Forms.ColumnHeader onoff;
         private System.Windows.Forms.TextBox search_id;
         private System.Windows.Forms.Button search_idbtn;
         private System.Windows.Forms.CheckBox checkBox1;

@@ -53,9 +53,14 @@ namespace modelagemEstoque
         private void button1_Click(object sender, EventArgs e)
         {
             //altera o produto selecionado
-            listview_prod.SelectedItems[0].SubItems[0].Text = (txt_ID_produto.Text);
-            listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text);
-            listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);
+            if (txt_ID_produto.Text != "")
+            {
+                listview_prod.SelectedItems[0].SubItems[0].Text = (txt_ID_produto.Text); }
+            if (txt_nome_prod.Text != ""){ 
+            listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text); }
+            if (txt_qtde_produto.Text != "")
+            {
+                listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);}
             listview_prod.SelectedItems[0].SubItems[3].Text = (data_compra_prod.Value.ToString("D"));
             listview_prod.SelectedItems[0].SubItems[4].Text = (data_vencimento_prod.Value.ToString("D"));
             if (checkBox1.Checked)
