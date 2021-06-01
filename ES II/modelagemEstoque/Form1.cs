@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,12 +56,16 @@ namespace modelagemEstoque
             //altera o produto selecionado
             if (txt_ID_produto.Text != "")
             {
-                listview_prod.SelectedItems[0].SubItems[0].Text = (txt_ID_produto.Text); }
-            if (txt_nome_prod.Text != ""){ 
-            listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text); }
+                listview_prod.SelectedItems[0].SubItems[0].Text = (txt_ID_produto.Text);
+            }
+            if (txt_nome_prod.Text != "")
+            {
+                listview_prod.SelectedItems[0].SubItems[1].Text = (txt_nome_prod.Text);
+            }
             if (txt_qtde_produto.Text != "")
             {
-                listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);}
+                listview_prod.SelectedItems[0].SubItems[2].Text = (txt_qtde_produto.Text);
+            }
             listview_prod.SelectedItems[0].SubItems[3].Text = (data_compra_prod.Value.ToString("D"));
             listview_prod.SelectedItems[0].SubItems[4].Text = (data_vencimento_prod.Value.ToString("D"));
             if (checkBox1.Checked)
@@ -76,7 +81,7 @@ namespace modelagemEstoque
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -98,5 +103,28 @@ namespace modelagemEstoque
         {
 
         }
+
+        private async void btn_exportar_Click(object sender, EventArgs e)
+        {
+
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents | *.txt ", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    using (TextWriter tw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
+                    {
+                        foreach (ListViewItem item in listview_prod.Items)
+                        {
+                            await tw.WriteLineAsync(item.SubItems[0].Text + " \t" + item.SubItems[1].Text + " \t" + item.SubItems[2].Text + item.SubItems[3].Text + " \t" + item.SubItems[4].Text + " \t" + item.SubItems[5].Text); 
+                        }
+                        MessageBox.Show("Salvo com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    }
+                }
+            }
+        }
     }
 }
+        
+    
+

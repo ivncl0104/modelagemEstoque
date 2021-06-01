@@ -56,6 +56,7 @@ namespace modelagemEstoque
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_exportar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -209,7 +210,10 @@ namespace modelagemEstoque
             // 
             // btn_desativar
             // 
-        
+            this.btn_desativar.Location = new System.Drawing.Point(0, 0);
+            this.btn_desativar.Name = "btn_desativar";
+            this.btn_desativar.Size = new System.Drawing.Size(75, 23);
+            this.btn_desativar.TabIndex = 36;
             // 
             // search_id
             // 
@@ -286,12 +290,23 @@ namespace modelagemEstoque
             this.label6.TabIndex = 35;
             this.label6.Text = "Data de Validade";
             // 
+            // btn_exportar
+            // 
+            this.btn_exportar.Location = new System.Drawing.Point(963, 450);
+            this.btn_exportar.Name = "btn_exportar";
+            this.btn_exportar.Size = new System.Drawing.Size(125, 27);
+            this.btn_exportar.TabIndex = 37;
+            this.btn_exportar.Text = "Exportar";
+            this.btn_exportar.UseVisualStyleBackColor = true;
+            this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1446, 664);
+            this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -350,6 +365,7 @@ namespace modelagemEstoque
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_exportar;
     }
 }
 
