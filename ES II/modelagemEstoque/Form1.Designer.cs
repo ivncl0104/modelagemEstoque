@@ -47,9 +47,6 @@ namespace modelagemEstoque
             this.freezer = new System.Windows.Forms.ColumnHeader();
             this.data_compra_prod = new System.Windows.Forms.DateTimePicker();
             this.data_vencimento_prod = new System.Windows.Forms.DateTimePicker();
-            this.btn_desativar = new System.Windows.Forms.Button();
-            this.search_id = new System.Windows.Forms.TextBox();
-            this.search_idbtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,6 +54,8 @@ namespace modelagemEstoque
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_exportar = new System.Windows.Forms.Button();
+            this.ativo = new System.Windows.Forms.ColumnHeader();
+            this.ativo_check = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // listBox1
@@ -147,7 +146,8 @@ namespace modelagemEstoque
             this.list_qtde_prod,
             this.list_data_compra_prod,
             this.list_data_vencimento_prod,
-            this.freezer});
+            this.freezer,
+            this.ativo});
             this.listview_prod.FullRowSelect = true;
             this.listview_prod.HideSelection = false;
             this.listview_prod.Location = new System.Drawing.Point(56, 93);
@@ -192,7 +192,7 @@ namespace modelagemEstoque
             // 
             this.freezer.Text = "FREEZER";
             this.freezer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.freezer.Width = 200;
+            this.freezer.Width = 90;
             // 
             // data_compra_prod
             // 
@@ -207,31 +207,6 @@ namespace modelagemEstoque
             this.data_vencimento_prod.Name = "data_vencimento_prod";
             this.data_vencimento_prod.Size = new System.Drawing.Size(200, 21);
             this.data_vencimento_prod.TabIndex = 24;
-            // 
-            // btn_desativar
-            // 
-            this.btn_desativar.Location = new System.Drawing.Point(0, 0);
-            this.btn_desativar.Name = "btn_desativar";
-            this.btn_desativar.Size = new System.Drawing.Size(75, 23);
-            this.btn_desativar.TabIndex = 36;
-            // 
-            // search_id
-            // 
-            this.search_id.Location = new System.Drawing.Point(56, 62);
-            this.search_id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.search_id.Name = "search_id";
-            this.search_id.Size = new System.Drawing.Size(103, 21);
-            this.search_id.TabIndex = 28;
-            // 
-            // search_idbtn
-            // 
-            this.search_idbtn.Location = new System.Drawing.Point(179, 62);
-            this.search_idbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.search_idbtn.Name = "search_idbtn";
-            this.search_idbtn.Size = new System.Drawing.Size(82, 22);
-            this.search_idbtn.TabIndex = 29;
-            this.search_idbtn.Text = "button1";
-            this.search_idbtn.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -300,12 +275,30 @@ namespace modelagemEstoque
             this.btn_exportar.UseVisualStyleBackColor = true;
             this.btn_exportar.Click += new System.EventHandler(this.btn_exportar_Click);
             // 
+            // ativo
+            // 
+            this.ativo.Text = "ATIVO?";
+            this.ativo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ativo.Width = 90;
+            // 
+            // ativo_check
+            // 
+            this.ativo_check.AutoSize = true;
+            this.ativo_check.Location = new System.Drawing.Point(761, 482);
+            this.ativo_check.Name = "ativo_check";
+            this.ativo_check.Size = new System.Drawing.Size(54, 19);
+            this.ativo_check.TabIndex = 38;
+            this.ativo_check.Text = "Ativo";
+            this.ativo_check.UseVisualStyleBackColor = true;
+            this.ativo_check.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1446, 664);
+            this.Controls.Add(this.ativo_check);
             this.Controls.Add(this.btn_exportar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -313,9 +306,6 @@ namespace modelagemEstoque
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.search_idbtn);
-            this.Controls.Add(this.search_id);
-            this.Controls.Add(this.btn_desativar);
             this.Controls.Add(this.data_vencimento_prod);
             this.Controls.Add(this.data_compra_prod);
             this.Controls.Add(this.listview_prod);
@@ -355,10 +345,7 @@ namespace modelagemEstoque
         private System.Windows.Forms.ColumnHeader list_data_vencimento_prod;
         private System.Windows.Forms.DateTimePicker data_compra_prod;
         private System.Windows.Forms.DateTimePicker data_vencimento_prod;
-        private System.Windows.Forms.Button btn_desativar;
         private System.Windows.Forms.ColumnHeader freezer;
-        private System.Windows.Forms.TextBox search_id;
-        private System.Windows.Forms.Button search_idbtn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -366,6 +353,8 @@ namespace modelagemEstoque
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_exportar;
+        private System.Windows.Forms.ColumnHeader ativo;
+        private System.Windows.Forms.CheckBox ativo_check;
     }
 }
 

@@ -36,11 +36,16 @@ namespace modelagemEstoque
                 item.SubItems.Add("Sim");
             else
                 item.SubItems.Add("Não");
+            if (ativo_check.Checked)
+                item.SubItems.Add("Sim");
+            else
+                item.SubItems.Add("Não");
             listview_prod.Items.Add(item);
             txt_ID_produto.Clear();
             txt_nome_prod.Clear();
             txt_qtde_produto.Clear();
             checkBox1.Checked = false;
+            ativo_check.Checked = false;
 
 
 
@@ -72,6 +77,10 @@ namespace modelagemEstoque
                 listview_prod.SelectedItems[0].SubItems[5].Text = ("Sim");
             else
                 listview_prod.SelectedItems[0].SubItems[5].Text = ("Não");
+            if (ativo_check.Checked)
+                listview_prod.SelectedItems[0].SubItems[6].Text = ("Sim");
+            else
+                listview_prod.SelectedItems[0].SubItems[6].Text = ("Não");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -113,15 +122,21 @@ namespace modelagemEstoque
                 {
                     using (TextWriter tw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
                     {
+                        await tw.WriteLineAsync("#ID \t#Nome \t\t#Quantidade \t#Data Aquisição \t\t\t\t#Data Validade \t\t\t#Freezer  #Ativo ");
                         foreach (ListViewItem item in listview_prod.Items)
                         {
-                            await tw.WriteLineAsync(item.SubItems[0].Text + " \t" + item.SubItems[1].Text + " \t" + item.SubItems[2].Text + item.SubItems[3].Text + " \t" + item.SubItems[4].Text + " \t" + item.SubItems[5].Text); 
+                            await tw.WriteLineAsync("#" + item.SubItems[0].Text + " \t#" + item.SubItems[1].Text + " \t#" + item.SubItems[2].Text+ " \t\t#" + item.SubItems[3].Text + " \t#" + item.SubItems[4].Text + " \t#" + item.SubItems[5].Text + " \t#" + item.SubItems[6].Text); 
                         }
                         MessageBox.Show("Salvo com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }
             }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
