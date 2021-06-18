@@ -115,7 +115,7 @@ namespace modelagemEstoque
 
         private async void btn_exportar_Click(object sender, EventArgs e)
         {
-
+            //salvar
             using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Text Documents | *.txt ", ValidateNames = true })
             {
                 if (sfd.ShowDialog() == DialogResult.OK)
